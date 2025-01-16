@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-
 class MessageBoardTest {
 
     @Test
@@ -22,8 +21,15 @@ class MessageBoardTest {
         MessageBoard messageBoard = new MessageBoard();
         String searchMessage = messageBoard.searchMessage(1);
         Assertions.assertThat(searchMessage).isEqualTo("[Message{id=1, name='我的名字', title='我的標題', content='我的內容'}]");
-    
+
     }
 
+    @Test
+    void delete_message() {
+        MessageBoard messageBoard = new MessageBoard();
+        String deleteMessage = messageBoard.deleteMessage(1);
+        Assertions.assertThat(deleteMessage).isEqualTo("delete message success!!");
+
+    }
 
 }
