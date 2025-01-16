@@ -2,7 +2,8 @@ package org.example;
 
 public class Message {
 
-    private int id;
+
+    public static int id;
     private String name;
     private String title;
     private String content;
