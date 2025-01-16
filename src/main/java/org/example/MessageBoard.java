@@ -7,55 +7,35 @@ public class MessageBoard {
 
     public static final ArrayList<Message> messageList = new ArrayList<>();
     public static final resultMessage resultMessage = new resultMessage();
+    private final org.example.addMessage addMessage = new addMessage();
+    private final org.example.searchMessage searchMessage = new searchMessage();
+    private final org.example.deleteMessage deleteMessage = new deleteMessage();
+    private final org.example.setMessage setMessage = new setMessage();
+    private final org.example.showAllMessage showAllMessage = new showAllMessage();
 
     public String addMessage(int id, String name, String title, String content) {
-        messageList.add(new Message(id, name, title, content));
-        return resultMessage.toString("addSuccessResult");
+        return addMessage.addMessage(id, name, title, content);
     }
 
     public String searchMessage(int id) {
 
-        for (Message message : messageList) {
-            if (message.getId() == id) {
-                return message.toString();
-            }
-        }
-        return resultMessage.toString("notFoundResult");
-
+        return searchMessage.searchMessage(id);
     }
 
     public String deleteMessage(int id) {
 
-        for (int i = 0; i < messageList.size(); i++) {
-            if (messageList.get(i).getId() == id) {
-                messageList.remove(i);
-                return resultMessage.toString("deleteSuccessResult");
-            }
-        }
-            return resultMessage.toString("notFound");
 
-
+        return deleteMessage.deleteMessage(id);
     }
 
 
     public String setMessage(int id, String newName, String newTitle, String newContent) {
 
-        for (Message message : messageList) {
-            if (message.getId() == id) {
-                message.setName(newName);
-                message.setTitle(newTitle);
-                message.setContent(newContent);
-                return message.toString();
-            }
-        }
-        return resultMessage.toString("notFoundResult");
+        return setMessage.setMessage(id, newName, newTitle, newContent);
     }
 
-    public String allMessage() {
-        for (Message message : messageList) {
-            System.out.println(message);
-            }
+    public String showAllMessage() {
 
-        return "OK!!";
+        return showAllMessage.allMessage();
     }
 }
