@@ -6,12 +6,12 @@ public class MessageBoard {
 
 
     public static final ArrayList<Message> messageList = new ArrayList<>();
-    public static final resultMessage resultMessage = new resultMessage();
-    private final org.example.addMessage addMessage = new addMessage();
-    private final org.example.searchMessage searchMessage = new searchMessage();
-    private final org.example.deleteMessage deleteMessage = new deleteMessage();
-    private final org.example.setMessage setMessage = new setMessage();
-    private final org.example.showAllMessage showAllMessage = new showAllMessage();
+    public static final ResultMessage resultMessage = new ResultMessage();
+    private final AddMessage addMessage = new AddMessage();
+    private final SearchMessage searchMessage = new SearchMessage();
+    private final DeleteMessage deleteMessage = new DeleteMessage();
+    private final SetMessage setMessage = new SetMessage();
+    private final ShowAllMessage ShowAllMessage = new ShowAllMessage();
 
     public String addMessage(int id, String name, String title, String content) {
         return addMessage.addMessage(id, name, title, content);
@@ -36,6 +36,6 @@ public class MessageBoard {
 
     public String showAllMessage() {
 
-        return showAllMessage.allMessage();
+        return ShowAllMessage.showAllMessage();
     }
 }

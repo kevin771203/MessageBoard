@@ -1,7 +1,7 @@
 package org.example;
 
-public class setMessage {
-    public setMessage() {
+public class SetMessage {
+    public SetMessage() {
     }
 
     public String setMessage(int id, String newName, String newTitle, String newContent) {

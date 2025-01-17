@@ -1,7 +1,7 @@
 package org.example;
 
-public class searchMessage {
-    public searchMessage() {
+public class SearchMessage {
+    public SearchMessage() {
     }
 
     public String searchMessage(int id) {

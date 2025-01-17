@@ -1,6 +1,6 @@
 package org.example;
 
-public class resultMessage {
+public class ResultMessage {
 
     private String addResult = "add message success!!";
     private String deleteResult = "delete message success!!";
