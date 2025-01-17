@@ -5,7 +5,7 @@ public class AddMessage {
     }
 
     public String addMessage(int id, String name, String title, String content) {
-        MessageBoard.messageList.add(new Message(id, name, title, content));
-        return MessageBoard.resultMessage.toString("addSuccessResult");
+        MessageService.messageList.add(new Message(id, name, title, content));
+        return MessageService.resultMessage.toString("addSuccessResult");
     }
 }

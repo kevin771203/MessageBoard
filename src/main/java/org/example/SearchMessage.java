@@ -6,12 +6,12 @@ public class SearchMessage {
 
     public String searchMessage(int id) {
 
-        for (Message message : MessageBoard.messageList) {
+        for (Message message : MessageService.messageList) {
             if (message.getId() == id) {
                 return message.toString();
             }
         }
-        return MessageBoard.resultMessage.toString("notFoundResult");
+        return MessageService.resultMessage.toString("notFoundResult");
 
     }
 }

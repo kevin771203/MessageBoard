@@ -5,7 +5,7 @@ public class ShowAllMessage {
     }
 
     public String showAllMessage() {
-        for (Message message : MessageBoard.messageList) {
+        for (Message message : MessageService.messageList) {
             System.out.println(message);
         }
 

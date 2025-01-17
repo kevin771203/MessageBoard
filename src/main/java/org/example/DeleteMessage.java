@@ -8,13 +8,13 @@ public class DeleteMessage {
 
     public String deleteMessage(int id) {
 
-            for (int i = 0; i < MessageBoard.messageList.size(); i++) {
-                if (MessageBoard.messageList.get(i).getId() == id) {
-                    MessageBoard.messageList.remove(i);
-                    return MessageBoard.resultMessage.toString("deleteSuccessResult");
+            for (int i = 0; i < MessageService.messageList.size(); i++) {
+                if (MessageService.messageList.get(i).getId() == id) {
+                    MessageService.messageList.remove(i);
+                    return MessageService.resultMessage.toString("deleteSuccessResult");
                 }
             }
-            return MessageBoard.resultMessage.toString("notFound");
+            return MessageService.resultMessage.toString("notFound");
 
 
     }

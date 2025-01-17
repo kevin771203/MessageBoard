@@ -11,8 +11,8 @@ class MessageBoardTest {
 
     @BeforeEach
     void setUp() {
-        messageBoard.messageList.clear();
-        messageBoard = new MessageBoard();
+        MessageService.messageList.clear();
+        messageBoard = new MessageBoard(new MessageService());
         messageBoard.addMessage(1, "Alice", "Hello", "Welcome!");
         messageBoard.addMessage(2, "Bob", "Question", "How to use this?");
         messageBoard.addMessage(3, "Charlie", "Feedback", "Great feature!");
@@ -20,7 +20,7 @@ class MessageBoardTest {
     }
 
     @Test
-    void _show_all_message() {
+    void show_all_message() {
 
         String allMessage = messageBoard.showAllMessage();
         Assertions.assertThat(allMessage).isEqualTo("OK!!");
@@ -29,34 +29,45 @@ class MessageBoardTest {
 
 
     @Test
-    void _add_message() {
+    void add_message() {
 
-        String addMessage = messageBoard.addMessage(4,"Kevin", "Suck", "Bitch!");
-        Assertions.assertThat(addMessage).isEqualTo("add message success!!");
-
-    }
-
-    @Test
-    void _search_message() {
-
-        String searchMessage = messageBoard.searchMessage(2);
-        Assertions.assertThat(searchMessage).isEqualTo("Message{id=2, name='Bob', title='Question', content='How to use this?'}");
+        Assertions.assertThat(messageBoard.addMessage(
+                4,
+                "Kevin",
+                "Suck",
+                "Bitch!"
+        )).isEqualTo("add message success!!");
 
     }
 
     @Test
-    void _set_message() {
+    void search_message() {
 
-        String setMessage = messageBoard.setMessage(1,"Alice", "Hi", "Not you");
-        Assertions.assertThat(setMessage).isEqualTo("Message{id=1, name='Alice', title='Hi', content='Not you'}");
+        Assertions.assertThat(messageBoard.searchMessage(2)).isEqualTo(
+                "Message{id=2, " +
+                        "name='Bob', " +
+                        "title='Question', " +
+                        "content='How to use this?'}"
+        );
 
     }
 
     @Test
-    void _delete_message() {
+    void update_message() {
 
-        String deleteMessage = messageBoard.deleteMessage(2);
-        Assertions.assertThat(deleteMessage).isEqualTo("delete message success!!");
+        Assertions.assertThat(messageBoard.updateMessage(
+                1,
+                "Alice",
+                "Hi",
+                "Not you"
+        )).isEqualTo("Message{id=1, name='Alice', title='Hi', content='Not you'}");
+
+    }
+
+    @Test
+    void delete_message() {
+
+        Assertions.assertThat(messageBoard.deleteMessage(2)).isEqualTo("delete message success!!");
 
     }
 

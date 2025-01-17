@@ -1,41 +1,38 @@
 package org.example;
 
-import java.util.ArrayList;
-
 public class MessageBoard {
 
 
-    public static final ArrayList<Message> messageList = new ArrayList<>();
-    public static final ResultMessage resultMessage = new ResultMessage();
-    private final AddMessage addMessage = new AddMessage();
-    private final SearchMessage searchMessage = new SearchMessage();
-    private final DeleteMessage deleteMessage = new DeleteMessage();
-    private final SetMessage setMessage = new SetMessage();
-    private final ShowAllMessage ShowAllMessage = new ShowAllMessage();
+    private final MessageService messageService;
+
+    public MessageBoard(MessageService messageService) {
+        this.messageService = messageService;
+    }
+
 
     public String addMessage(int id, String name, String title, String content) {
-        return addMessage.addMessage(id, name, title, content);
+        return messageService.addMessage.addMessage(id, name, title, content);
     }
 
     public String searchMessage(int id) {
 
-        return searchMessage.searchMessage(id);
+        return messageService.searchMessage.searchMessage(id);
     }
 
     public String deleteMessage(int id) {
 
 
-        return deleteMessage.deleteMessage(id);
+        return messageService.deleteMessage.deleteMessage(id);
     }
 
 
-    public String setMessage(int id, String newName, String newTitle, String newContent) {
+    public String updateMessage(int id, String newName, String newTitle, String newContent) {
 
-        return setMessage.setMessage(id, newName, newTitle, newContent);
+        return messageService.updateMessage.updateMessage(id, newName, newTitle, newContent);
     }
 
     public String showAllMessage() {
 
-        return ShowAllMessage.showAllMessage();
+        return messageService.ShowAllMessage.showAllMessage();
     }
 }
