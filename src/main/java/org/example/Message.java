@@ -22,9 +22,7 @@ public class Message {
         return "Message{id=" + id + ", name='" + name + "', title='" + title + "', content='" + content + "'}";
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() {return id;}
 
     public void setName(String newName) {
         this.name = newName;
