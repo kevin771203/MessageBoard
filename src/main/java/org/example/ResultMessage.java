@@ -8,9 +8,9 @@ public class ResultMessage {
 
     public String toString(String text) {
 
-        if (text == "addSuccessResult") {
+        if (text.equals("addSuccessResult")) {
             return addResult;
-        }else if (text == "deleteSuccessResult") {
+        }else if (text.equals("deleteSuccessResult")) {
             return deleteResult;
         }else {
             return notFound;
